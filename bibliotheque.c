@@ -14,14 +14,14 @@ typedef struct Liste {
     int nb_livres;
 } Liste;
 
-// 1- Initialiser la liste
+// Initialiser la liste
 void initialiser_liste(Liste *liste)
 {
     liste->premier = NULL;
     liste->nb_livres = 0;
 }
 
-// 2- Insérer en tête (CORRIGÉ)
+// Insérer en tête 
 void inserer_entete(Liste *liste, int id, char titre[], int annee)
 {
     Livre *nouveau = (Livre*) malloc(sizeof(Livre));
@@ -36,7 +36,7 @@ void inserer_entete(Liste *liste, int id, char titre[], int annee)
     liste->nb_livres++;
 }
 
-// 3- Insérer en fin (CORRIGÉ - nom de fonction)
+//  Insérer en fin 
 void inserer_fin(Liste *liste, int id, char titre[], int annee)
 {
     Livre *nouveau = (Livre*) malloc(sizeof(Livre));
@@ -60,7 +60,7 @@ void inserer_fin(Liste *liste, int id, char titre[], int annee)
     liste->nb_livres++;
 }
 
-// 4- Rechercher par identifiant (CORRIGÉ - type de retour)
+// Rechercher par identifiant 
 Livre* rechercher(Liste *liste, int id)
 {
     Livre *p = liste->premier;
@@ -76,7 +76,7 @@ Livre* rechercher(Liste *liste, int id)
     return NULL;
 }
 
-// 5- Supprimer par identifiant (CORRIGÉ - paramètre id)
+// Supprimer par identifiant
 void supprimer(Liste *liste, int id)
 {
     if(liste->premier == NULL) return;
@@ -101,7 +101,7 @@ void supprimer(Liste *liste, int id)
     liste->nb_livres--;
 }
 
-// 6- Afficher tous les livres
+// Afficher tous les livres
 void afficher(Liste *liste)
 {
     Livre *p = liste->premier;
@@ -211,4 +211,5 @@ int main()
     liberer_liste(&l);
 
     return 0;
+
 }
